@@ -11,7 +11,7 @@
 ## テスト用アカウント
 ・Basic認証パスワード：2222  
 ・Basic認証ID：admin  
-・メールアドレス：aaa@aaa.aaa  
+・メールアドレス：aaa@aaa 
 ・パスワード：aaaaaa1
 
 ## 利用方法
