@@ -18,7 +18,8 @@
       ▶︎<%= link_to '新規登録', new_worker_registration_path, class: "sign-up" %>
     <h6 p>※ 投稿には新規登録/ログインが必要です ※</p></h6>
     <% end %></br>
-    サロン登録</br>
+    <%= link_to 'サロン登録', new_salon_path %><br/>
+    <%= link_to 'サロン一覧', salons_path %><br/>
     =================
   </head>
 
@@ -27,7 +28,7 @@
   </body>
 
   <footer>
-    ==========</br>
+    ==========<br/>
     フッター
   </footer>
 </html>

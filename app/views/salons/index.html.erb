@@ -1,0 +1,14 @@
+<h1>Salons#index</h1>
+ネイルサロン一覧</br>
+●件のネイルサロンがあります</br>
+
+<ul class='salon-lists'>
+<% @salons.each do |salon| %>
+<li class='list'>
+<%= salon.store_name %>
+</br><%= image_tag salon.image.variant(gravity: :center, resize:"250x250^", crop:"250x250+0+0").processed , class: "salon-img" if salon.image.attached?%>
+</br><%= salon.prefecture.name%><%= salon.city %>
+</br><%= salon.station %>
+</li>
+<% end %>
+</ul>
