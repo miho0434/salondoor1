@@ -46,7 +46,14 @@
    <div class="field">
     <%= f.label :established , "創業年(西暦)" %>
     <span class="required">必須</span><br/>
-    <%= f.text_field :established, placeholder:"例）2000"%>
+    <%== sprintf(
+      f.date_select(
+        :established,
+        start_year: 1980,
+        end_year: Time.now.year,
+        discard_month: true, 
+        discard_day: true
+        ), )%>
    </div>
 
   <div class="field">
