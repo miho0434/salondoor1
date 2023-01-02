@@ -16,7 +16,17 @@ class Salon < ApplicationRecord
 
   #都道府県
   validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
-  
+
+  #創業年
+  validates :established,format: { with: /\A19[0-9]{2}|20[0-9]{2}\z/ }
+  validate :established_before_now
+
+  def established_before_now
+    return if established.blank?
+    errors.add(:established, "は今年以前の西暦を入力してください") if established > Date.today.year
+  end
+
+
   #店舗数
-  validates :offices, numericality: {only_integer: true, greater_than_or_equal_to: 1, message: "１以上の数字を入力してください"}
+  validates :offices, numericality: {only_integer: true, greater_than_or_equal_to: 1, message: "は１以上の数字を入力してください"}
 end
