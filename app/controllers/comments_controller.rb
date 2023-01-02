@@ -1,6 +1,17 @@
 class CommentsController < ApplicationController
+
+  def new
+    @comment = Comment.new
+    @salon = Salon.find(params[:salon_id])
+  end
+
   def create
     @comment = Comment.new(comment_params)
+    if @comment.save
+      redirect_to salons_path
+    else
+      render :new
+    end
    end
 
    private

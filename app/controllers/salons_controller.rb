@@ -1,6 +1,7 @@
 class SalonsController < ApplicationController
   def index
     @salons = Salon.order("created_at DESC")
+    @comment = Comment.new
   end
 
   def new
@@ -14,6 +15,10 @@ class SalonsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @salon = Salon.find(params[:id])
   end
 
   private  

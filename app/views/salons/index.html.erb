@@ -5,10 +5,11 @@
 <ul class='salon-lists'>
 <% @salons.each do |salon| %>
 <li class='list'>
-<%= salon.store_name %>
+<%= salon.store_name %><%= link_to '詳細', root_path, class: "#" %>
 </br><%= image_tag salon.image.variant(gravity: :center, resize:"250x250^", crop:"250x250+0+0").processed , class: "salon-img" if salon.image.attached?%>
-</br><%= salon.prefecture.name%><%= salon.city %>
-</br><%= salon.station %>
+</br><%= salon.prefecture.name%><%= salon.city %>(<%= salon.station %>)
+</br><%= link_to '口コミを見る', root_path, class: "#" %>
+</br><%= link_to '口コミを投稿する',  new_salon_comment_path(salon.id), class: "#" %>
 </li>
 <% end %>
 </ul>
