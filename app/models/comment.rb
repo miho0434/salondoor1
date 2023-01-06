@@ -12,4 +12,5 @@ class Comment < ApplicationRecord
     validates :reason_for_retirement 
   end
 
+
 end
