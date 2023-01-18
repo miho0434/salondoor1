@@ -1,5 +1,11 @@
 class CommentsController < ApplicationController
 
+  def index
+    @salon = Salon.find(params[:salon_id])
+    @comments = @salon.comments
+  end
+  
+  
   def new
     @comment = Comment.new
     @salon = Salon.find(params[:salon_id])
@@ -10,7 +16,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to salons_path
     else
-      render :new
+      render "comments/new"
     end
    end
 

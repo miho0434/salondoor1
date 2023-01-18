@@ -1,1 +1,30 @@
-Comments/index
+Comments/index</br>
+<%= @salon.store_name %>の口コミ一覧</br>
+
+
+★雰囲気・環境・働きやすさ</br>
+<% @comments.each do |comment| %>
+<%= comment.atmosphere %></br>
+<% end %>
+
+★得られた技術、成長できるポイント</br>
+<% @comments.each do |comment| %>
+<%= comment.growth_potential  %></br>
+<% end %>
+
+★入社前後のギャップ</br>
+<% @comments.each do |comment| %>
+<%= comment.gap %></br>
+<% end %>
+
+★福利厚生・給与など待遇面</br>
+<% @comments.each do |comment| %>
+<%= comment.treatment %></br>
+<% end %>
+
+★退職した、もしくは退職しようと考えている理由</br>
+<% @comments.each do |comment| %>
+<%= comment.reason_for_retirement %></br>
+<% end %>
+
+
