@@ -27,7 +27,6 @@ class Salon < ApplicationRecord
     errors.add(:established, "は今年以前の西暦を入力してください") if established > Date.today.year
   end
 
-
   #店舗数
-  validates :offices, numericality: {only_integer: true, greater_than_or_equal_to: 1, message: "は１以上の数字を入力してください"}
+  validates :offices, numericality: {only_integer: true, greater_than_or_equal_to: 1, message: "店舗数は１以上の数字を入力してください"}
 end
