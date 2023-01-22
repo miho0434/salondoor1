@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @salon = Salon.find(params[:salon_id])
     @comment = Comment.new(comment_params)
     if @comment.save
       redirect_to salons_path

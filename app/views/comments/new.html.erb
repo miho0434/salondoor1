@@ -9,27 +9,27 @@ Comments/new<br>
 
   <div class="field">
     <%= f.label :atmosphere , "雰囲気・環境・働きやすさ" %><br/>
-    <%=f.text_field :atmosphere, placeholder:"10〜500文字以内で記入してください" %>
+    <%=f.text_field :atmosphere, placeholder:"500文字以内で記入してください" %>
   </div>
 
   <div class="field">
     <%= f.label :growth_potential  , "得られた技術、成長できるポイント" %><br/>
-    <%=f.text_field :growth_potential, placeholder:"10〜500文字以内で記入してください"%>
+    <%=f.text_field :growth_potential, placeholder:"500文字以内で記入してください"%>
   </div>
 
   <div class="field">
     <%= f.label :gap , "入社前後のギャップ" %><br/>
-    <%= f.text_field :gap, placeholder:"10〜500文字以内で記入してください"%>
+    <%= f.text_field :gap, placeholder:"500文字以内で記入してください"%>
   </div>
 
   <div class="field">
     <%= f.label :treatment  , "福利厚生・給与など待遇面" %><br/>
-    <%= f.text_field :treatment , placeholder:"10〜500文字以内で記入してください"%>
+    <%= f.text_field :treatment , placeholder:"500文字以内で記入してください"%>
   </div>
 
   <div class="field">
     <%= f.label :reason_for_retirement, "退職した、もしくは退職しようと考えている理由" %><br/>
-    <%= f.text_field :reason_for_retirement, placeholder:"10〜500文字以内で記入してください"%>
+    <%= f.text_field :reason_for_retirement, placeholder:"500文字以内で記入してください"%>
   </div>
 
   <div class="actions">
@@ -38,7 +38,7 @@ Comments/new<br>
 <% end %>
 
 <% else %>
-  <strong><p>※※※ 口コミの投稿には新規登録/ログインが必要です ※※※</p></strong>
+  <strong><p>※※※ 口コミの投稿にはログインが必要です ※※※</p></strong>
   ▶︎<%= link_to 'ログイン', worker_session_path, class: "login" %>
   ▶︎<%= link_to '新規登録', new_worker_registration_path, class: "sign-up" %>
 <% end %>
