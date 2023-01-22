@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
     else
       render "comments/new"
     end
-   end
+  end
 
    private
    
