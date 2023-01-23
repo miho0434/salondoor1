@@ -4,10 +4,13 @@
     <title>Salondoor1</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%# リセットCSSの設定 %>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   
+
+  <%# CSS・・・assets/stylesheets/.css %>
     <h4 class="headSummary">ネイリスト・ネイルサロンの求人・転職サロン検索</h4>
     <% if worker_signed_in? %>
       <div class="">
