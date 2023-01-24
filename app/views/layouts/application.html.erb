@@ -8,23 +8,50 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
+  </head>
 
   <%# CSS・・・assets/stylesheets/.css %>
-    <h4 class="headSummary">ネイリスト・ネイルサロンの求人・転職サロン検索</h4>
+  <header class="Head_header">
+      <div class="Head_inner">
+        <div class="Head_box_first">
+          <div class="Head_logo">
+          <%= link_to image_tag("salondoor_logo.PNG",size: "192x71"), "/"%>
+        </div>
+        </div>
+          
     <% if worker_signed_in? %>
-      <div class="">
-      ▶︎<%= link_to current_worker.nickname, "#", class: "user-nickname" %>さん
-      ▶︎<%= link_to "ログアウト", destroy_worker_session_path, method: :delete, class: "logout" %>
-    <% else %>    
-      ▶︎<%= link_to 'ログイン', worker_session_path, class: "login" %>
-      ▶︎<%= link_to '新規登録', new_worker_registration_path, class: "sign-up" %>
-    <h6 p>※ 投稿には新規登録/ログインが必要です ※</p></h6>
-    <% end %></br>
-    <%= link_to 'サロン登録', new_salon_path %><br/>
-    <%= link_to 'サロン一覧', salons_path %><br/>
-    ==========<br>
-  </head>
+      <div class="Head_box_second">
+        <div class="Head_box_second1">
+          <div class='Head_btn'>
+            <%= link_to current_worker.nickname, "#", class: "user-nickname" %>
+          </div>
+        </div>
+        <div class="Head_box_second2">
+          <div class='Head_btn'>
+            <%= link_to "ログアウト", destroy_worker_session_path, method: :delete%>
+          </div>
+        </div>
+      </div>
+    <% else %>
+    <div class="Head_box_second"> 
+    <div class="Head_box_second1">
+    <div class='Head_btn'> 
+      <%= link_to 'ログイン', worker_session_path, class: "login" %>
+    </div>
+     </div>
+    
+    <div class="Head_box_second2">
+    <div class='Head_btn'>
+      <%= link_to '新規登録', new_worker_registration_path, class: "sign-up" %>
+    </div>
+    </div>
+    </div>
+    <% end %>
+    </div>
+  </div>
+  </header>
+  
 
   <body>
     <%= yield %>

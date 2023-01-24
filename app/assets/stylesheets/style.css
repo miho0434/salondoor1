@@ -1,0 +1,104 @@
+/* リセットCSS */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  color: #3b4043;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #3b4043;
+}
+
+/* ヘッダー */
+.Head_header {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 20px 0;
+}
+.Head_inner {
+  background-color: #e5e5ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 12px 30px;
+}
+
+.Head_box_first {
+  display: flex;
+  align-items: center;
+}
+
+.Head_logo {
+}
+
+.Head_box_second {
+  display: flex;
+}
+
+.Head_box_second1{
+  width: 130px;
+  margin-right: 5px;
+}
+
+.Head_box_second2{
+
+}
+
+.Head_btn{
+  width:100px;
+  height:30px;
+  line-height:30px;  
+}
+
+.Head_btn a{
+  display:block;
+  width:100%;
+  height:100%;
+  text-decoration: none;
+  background:#E5E5FF;
+  text-align:center;
+  border:4px solid #E5E5FF;
+  color:#575757;
+  font-size: 18px;
+  font-weight:bold;
+  border-radius:7px;
+  -webkit-border-radius:7px;
+  -moz-border-radius:7px;
+  transition: all 0.5s ease;
+  text-align: center;
+}
+
+.Head_btn a:hover{
+  background:#E5E5FF;
+  color:#8f76d6;
+  margin-left:0px;
+  margin-top:0px;
+  border:4px solid #E5E5FF;
+  box-shadow:none;
+}
