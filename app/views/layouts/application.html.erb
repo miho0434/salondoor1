@@ -12,15 +12,16 @@
   </head>
 
   <%# CSS・・・assets/stylesheets/.css %>
-  <header class="Head_header">
-      <div class="Head_inner">
-        <div class="Head_box_first">
-          <div class="Head_logo">
+  <div class="Head_header">
+  <header>
+    <div class="Head_inner">
+      <div class="Head_box_first">
+        <div class="Head_logo">
           <%= link_to image_tag("salondoor_logo2.PNG",size: "192x71"), "/"%>
         </div>
-        </div>
+      </div>
           
-    <% if worker_signed_in? %>
+      <% if worker_signed_in? %>
       <div class="Head_box_second">
         <div class="Head_box_second1">
           <div class='Head_btn'>
@@ -33,24 +34,26 @@
           </div>
         </div>
       </div>
-    <% else %>
-    <div class="Head_box_second"> 
-    <div class="Head_box_second1">
-    <div class='Head_btn'> 
-      <%= link_to 'ログイン', worker_session_path, class: "login" %>
-    </div>
-     </div>
+      <% else %>
+      <div class="Head_box_second"> 
+        <div class="Head_box_second1">
+          <div class='Head_btn'> 
+            <%= link_to 'ログイン', worker_session_path, class: "login" %>
+          </div>
+        </div>
     
-    <div class="Head_box_second2">
-    <div class='Head_btn'>
-      <%= link_to '新規登録', new_worker_registration_path, class: "sign-up" %>
+        <div class="Head_box_second2">
+          <div class='Head_btn'>
+            <%= link_to '新規登録', new_worker_registration_path, class: "sign-up" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
     </div>
-    </div>
-    </div>
-    <% end %>
-    </div>
-  </div>
   </header>
+  </div>
+  
+  
   
 
   <body>
@@ -58,7 +61,8 @@
   </body>
 
 
-  <footer class="Foot_footer">
+  <div class="Foot_footer">
+  <footer class>
     <div class="Foot_logo">
       <%= link_to image_tag("salondoor_logo2.PNG",size: "115x42"), "/"%>
     </div>
@@ -74,6 +78,6 @@
     <div class="Foot_copyright">
       Copyright © SALONDOOR All rights reserved.
     </div>
-    </div> 
   </footer>
+  </div>
 </html>
