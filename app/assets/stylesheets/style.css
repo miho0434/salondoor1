@@ -54,7 +54,7 @@ a {
   align-items: center;
 }
 
-.Head_logo {
+.logo {
 }
 
 .Head_box_second {
@@ -83,7 +83,7 @@ a {
   text-decoration: none;
   background:#E5E5FF;
   text-align:center;
-  border:4px solid #E5E5FF;
+  border:2px solid#8f76d6;
   color:#575757;
   font-size: 18px;
   font-weight:bold;
@@ -95,10 +95,47 @@ a {
 }
 
 .Head_btn a:hover{
-  background:#E5E5FF;
+  background:white;
   color:#8f76d6;
   margin-left:0px;
   margin-top:0px;
-  border:4px solid #E5E5FF;
+  border:2px solid #8f76d6;
   box-shadow:none;
+  text-align: center;
 }
+
+/* フッター */
+.Foot_footer{
+  background-color: #e5e5ff;
+  color:#808080;
+}
+
+.Foot_logo{
+  margin: 20px,auto;
+  text-align: center;
+}
+
+.Foot_List{
+  overflow: hidden;
+}
+
+.Foot_List ul{
+  display: flex;
+  justify-content: center;
+}
+
+ol,ul{
+  list-style: none;
+}
+
+.Foot_ListItem{
+  padding: 5px 30px 5px 30px;
+  text-align: center;
+  font-size: small;
+}
+.Foot_copyright{
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: xx-small;
+}
+

@@ -16,7 +16,7 @@
       <div class="Head_inner">
         <div class="Head_box_first">
           <div class="Head_logo">
-          <%= link_to image_tag("salondoor_logo.PNG",size: "192x71"), "/"%>
+          <%= link_to image_tag("salondoor_logo2.PNG",size: "192x71"), "/"%>
         </div>
         </div>
           
@@ -57,8 +57,23 @@
     <%= yield %>
   </body>
 
-  <footer>
-    ==========<br>
-    フッター
+
+  <footer class="Foot_footer">
+    <div class="Foot_logo">
+      <%= link_to image_tag("salondoor_logo2.PNG",size: "115x42"), "/"%>
+    </div>
+    
+    <div class="Foot_List">
+      <ul>
+        <li class="Foot_ListItem"><%= link_to '利用規約', "/" %></li>
+        <li class="Foot_ListItem"><%= link_to 'プライバシーポリシー', "/" %></li>
+        <li class="Foot_ListItem"><%= link_to 'ヘルプ', "/" %></li>
+        <li class="Foot_ListItem"><%= link_to 'サイトマップ', "/" %></li>
+      </ul>
+    </div>
+    <div class="Foot_copyright">
+      Copyright © SALONDOOR All rights reserved.
+    </div>
+    </div> 
   </footer>
 </html>
