@@ -1,7 +1,5 @@
 <div class ="registration-main">
-
   <div class = "form-wrap">
-
     <div class ="form-header">
       <h2 class =form-header-text>会員情報入力</h2>
     </div>
@@ -10,41 +8,41 @@
       <%= form_with model: @worker, url: worker_registration_path, local: true do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-
-        <div class="form-text-wrap ">
-          <div class="form-text">
-            <%= f.label :nickname, "ニックネーム" %>
-            <span class="required">必須</span>
-          </div>
-            <%= f.text_field :nickname,  id:"worker_nickname" , :placeholder=> "例）worker太郎" , class:"input-default"%>
+      <div class="form-text-wrap ">
+        <div class="form-text">
+          <%= f.label :nickname, "ニックネーム" %>
+          <span class="required">必須</span>
         </div>
+          <%= f.text_field :nickname,  id:"worker_nickname" , :placeholder=> "例）worker太郎" , class:"input-default"%>
+      </div>
 
-        <div class="form-text-wrap ">
-          <div class="form-text">
-            <%= f.label :email, "メールアドレス" %>
-            <span class="required">必須</span>
-          </div>
-            <%= f.email_field :email, id:"worker_email", autofocus: true, autocomplete: "email" ,:placeholder=> "PC・携帯どちらでも可", class:"input-default"%>
+      <div class="form-text-wrap ">
+        <div class="form-text">
+          <%= f.label :email, "メールアドレス" %>
+          <span class="required">必須</span>
         </div>
+          <%= f.email_field :email, id:"worker_email", autofocus: true, autocomplete: "email" ,:placeholder=> "PC・携帯どちらでも可", class:"input-default"%>
+      </div>
 
-        <div class="form-text-wrap ">
-          <div class="form-text">
-            <%= f.label :password , "パスワード"%>
-            <span class="required">必須</span><br />
-          </div>
-            <%= f.password_field :password, id:"worker_password", autocomplete: "new-password" , :placeholder=> "６文字以上の半角英数字" , class:"input-default"%>
+      <div class="form-text-wrap ">
+        <div class="form-text">
+          <%= f.label :password , "パスワード"%>
+          <span class="required">必須</span><br />
         </div>
+          <%= f.password_field :password, id:"worker_password", autocomplete: "new-password" , :placeholder=> "６文字以上の半角英数字" , class:"input-default"%>
+      </div>
 
-          <div class="info-text">
+        <div class="info-text">
             ※英字と数字の両方を含め、６文字以上で設定してください
-          </div>
-
-       <div class="register-btn">
-          <%= f.submit "会員登録", class:"register-red-btn"%>
         </div>
+
+      <div class="register-btn">
+        <%= f.submit "会員登録", class:"register-red-btn"%>
+      </div>
+      <% end %>
     </div>
+  </div>
 </div>
-<% end %>
 
 <%#= render "devise/shared/links" %>
 
