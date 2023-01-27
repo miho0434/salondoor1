@@ -232,6 +232,7 @@ ol,ul{
   cursor: pointer;
 }
 
+/* ログインのみ情報*/
 .login-btn{
   width: 50%;
   margin: 15px auto;
