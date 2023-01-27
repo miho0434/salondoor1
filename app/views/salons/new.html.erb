@@ -1,66 +1,97 @@
-サロン情報作成
-<%= form_with(model: @salon, local: true) do |f|%>
-<%= render 'shared/error_messages', model: f.object %>
+<div class ="registration-main">
+  <div class = "form-wrap">
 
-  <div class="field">
-    <%= f.label :store_name , "店名" %>
-    <span class="required">必須</span><br/>
-    <%=f.text_field :store_name %>
+    <div class ="form-header">
+      <h2 class =form-header-text>サロン情報作成</h2>
+    </div>
+
+    <div class="form-group">
+      <%= form_with(model: @salon, local: true) do |f|%>
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <div class="form-text-wrap ">
+        <div class="form-text">
+          <%= f.label :store_name , "店名" %>
+          <span class="required">必須</span>
+        </div>
+        <%=f.text_field :store_name, class:"input-default"%>
+      </div>
+
+      <div class="form-text-wrap ">
+        <div class="form-text">
+          <%= f.label :corporate_name  , "法人名" %>
+          <span class="required">必須</span>
+        </div>
+        <%=f.text_field :corporate_name, class:"input-default" %>
+      </div>
+
+      <div class="form-text-wrap ">
+        <div class="form-text">
+          <%= f.label :prefecture_id , "勤務地（都道府県）" %>
+          <span class="required">必須</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"input-default", id:"prefecture"}) %>
+      </div>
+
+      <div class="form-text-wrap ">
+        <div class="form-text">
+          <%= f.label :city , "勤務地（市町村）" %>
+          <span class="required">必須</span>
+        </div>
+        <%= f.text_field :city, placeholder:"例）横浜市緑区", class:"input-default"%>
+      </div>
+
+      <div class="form-text-wrap ">
+        <div class="form-text">
+          <%= f.label :street_number , "勤務地（番地）" %>
+          <span class="required">必須</span>
+        </div>
+        <%= f.text_field :street_number, placeholder:"例）青山1-1-1", class:"input-default"%>
+      </div>
+
+      <div class="form-text-wrap ">
+        <div class="form-text">
+          <%= f.label :building_name , "勤務地（ビル名）" %>
+          <%= f.text_field :building_name, placeholder:"例）柳ビル103", class:"input-default"%>
+        </div>
+      </div>
+
+      <div class="form-text-wrap ">
+        <div class="form-text">
+          <%= f.label :station , "勤務地(最寄駅)" %>
+          <span class="required">必須</span>
+        </div>
+        <%= f.text_field :station, placeholder:"例）横浜駅 徒歩1分・吉祥寺駅からバス15分", class:"input-default"%>
+      </div>
+
+      <div class="form-text-wrap ">
+        <div class="form-text">
+          <%= f.label :established , "創業年(西暦)" %>
+          <span class="required">必須</span>
+          </div>
+        <%= f.text_field :established, placeholder:"例）2000", class:"input-default"%>
+      </div>
+
+      <div class="form-text-wrap ">
+        <div class="form-text">
+          <%= f.label :offices , "店舗数" %>
+          <span class="required">必須</span>
+        </div>
+        <%= f.text_field :offices, placeholder:"例）5", class:"input-default"%>
+      </div>
+
+      <div class="form-text-wrap ">
+        <div class="form-text">
+          <%= f.label :image, "お店の雰囲気がわかる写真" %><br />
+        </div>
+        <%= f.file_field :image, id:"salon_image" %>
+      </div>
+
+      <div class="login-btn ">
+        <%= f.submit "保存する", class: "login-red-btn"%>
+      </div>
+      <% end %>
+
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :corporate_name  , "社名" %>
-    <span class="required">必須</span><br/>
-    <%=f.text_field :corporate_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :prefecture_id , "勤務地（都道府県）" %>
-    <span class="required">必須</span><br/>
-    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
-  </div>
-
-  <div class="field">
-    <%= f.label :city , "勤務地（市町村）" %>
-    <span class="required">必須</span><br/>
-    <%= f.text_field :city, placeholder:"例）横浜市緑区"%>
-  </div>
-
-  <div class="field">
-    <%= f.label :street_number , "勤務地（番地）" %>
-    <span class="required">必須</span><br/>
-    <%= f.text_field :street_number, placeholder:"例）青山1-1-1"%>
-     </div>
-
-   <div class="field">
-    <%= f.label :building_name , "勤務地（ビル名）" %><br />
-    <%= f.text_field :building_name, placeholder:"例）柳ビル103"%>
-   </div>
-
-   <div class="field">
-    <%= f.label :station , "勤務地(最寄駅)" %>
-    <span class="required">必須</span><br/>
-    <%= f.text_field :station, placeholder:"例）横浜駅 徒歩1分・吉祥寺駅からバス15分"%>
-   </div>
-
-   <div class="field">
-    <%= f.label :established , "創業年(西暦)" %>
-    <span class="required">必須</span><br/>
-    <%= f.text_field :established, placeholder:"例）2000"%>
-   </div>
-
-  <div class="field">
-    <%= f.label :offices , "店舗数" %>
-    <span class="required">必須</span><br/>
-    <%= f.text_field :offices, placeholder:"例）5"%>
-   </div>
-
-  <div class="field">
-    <%= f.label :image, "お店の雰囲気" %><br />
-    <%= f.file_field :image, id:"salon_image" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "保存する", class: :form__btn %>
-  </div>
-<% end %>
+</div>
