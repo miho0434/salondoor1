@@ -37,9 +37,8 @@ a {
 /* ヘッダー */
 .Head_header {
   position: relative;
-  margin-bottom: 20px;
-  padding: 20px 0;
 }
+
 .Head_inner {
   background-color: #e5e5ff;
   display: flex;
