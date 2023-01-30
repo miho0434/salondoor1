@@ -34,6 +34,12 @@ a {
   color: #3b4043;
 }
 
+.container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 /* ヘッダー */
 .Head_header {
   position: relative;
@@ -107,6 +113,7 @@ a {
 .Foot_footer{
   background-color: #e5e5ff;
   color:#808080;
+  margin-top: auto; /* フッターを下に固定するCSS */
 }
 
 .Foot_logo{
