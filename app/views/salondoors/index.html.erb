@@ -1,3 +1,53 @@
-<h1>Salondoors#index</h1>
-<%= link_to 'サロン一覧', salons_path %><br/>
-<%= link_to 'サロン登録', new_salon_path %><br/>
+<div class="top">
+  <div class="top_inner">
+
+  <div class="top_image_text">
+    <div class="top_image1">
+      <%= link_to image_tag("salondoor_top.PNG"), "/"%>
+    </div>
+    
+    <div class="top_text1">
+      自分に合ったサロンが見つかる
+    </div>
+  </div>
+
+  <div class="top_menu">
+
+    <div class="top_menu_list">
+      <h1 class=top_menu_text>サロンの口コミを投稿する</h1>
+      <div class="menu_link">
+        <div id="menu_link_btn">
+          <ul>
+            <li><%= link_to 'ログイン', worker_session_path, class: "link_btn" %></li>
+            <li><%= link_to '新規登録', new_worker_registration_path, class: "link_btn" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="top_menu_list">
+      <h1 class=top_menu_text>サロンの口コミを見る</h1>
+      <div class="menu_link">
+        <div id="menu_link_btn">
+          <ul>
+           <li><%= link_to 'サロン一覧', salons_path, class: "link_btn" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="top_menu_list">
+      <h1 class=top_menu_text>サロン情報を登録する</h1>
+      <div class="menu_link">
+        <div id="menu_link_btn">
+          <ul>
+            <li><%= link_to 'サロン登録', new_salon_path, class: "link_btn" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+     
+  </div>
+
+     </div>
+  </div>
