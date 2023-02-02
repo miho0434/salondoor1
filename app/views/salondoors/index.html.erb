@@ -12,9 +12,18 @@
   </div>
 
   <div class="top_menu">
-
-    <div class="top_menu_list">
+  
+   <div class="top_menu_list">
       <h1 class=top_menu_text>サロンの口コミを投稿する</h1>
+      <% if worker_signed_in? %>
+      <div class="menu_link">
+        <div id="menu_link_btn">
+          <ul>
+           <li><%= link_to 'サロン一覧', salons_path, class: "link_btn" %></li>
+          </ul>
+        </div>
+      </div>
+      <% else %>
       <div class="menu_link">
         <div id="menu_link_btn">
           <ul>
@@ -23,7 +32,9 @@
           </ul>
         </div>
       </div>
+      <% end %>
     </div>
+ 
 
     <div class="top_menu_list">
       <h1 class=top_menu_text>サロンの口コミを見る</h1>
