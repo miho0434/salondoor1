@@ -25,28 +25,25 @@
           
       <% if worker_signed_in? %>
       <div class="Head_box_second">
+
         <div class="Head_box_second1">
-          <div class='Head_btn'>
-            <%= link_to current_worker.nickname, "#", class: "user-nickname" %>
-          </div>
-        </div>
-        <div class="Head_box_second2">
-          <div class='Head_btn'>
-            <%= link_to "ログアウト", destroy_worker_session_path, method: :delete%>
+          <div id='Head_btn'>
+            <ul>
+              <li><%= link_to current_worker.nickname, "#", class: "Headlink_btn" %></li>
+              <li><%= link_to "ログアウト", destroy_worker_session_path, method: :delete, class: "Headlink_btn"%></li>
+            </ul>
           </div>
         </div>
       </div>
+       
       <% else %>
       <div class="Head_box_second"> 
         <div class="Head_box_second1">
-          <div class='Head_btn'> 
-            <%= link_to 'ログイン', worker_session_path, class: "login" %>
-          </div>
-        </div>
-    
-        <div class="Head_box_second2">
-          <div class='Head_btn'>
-            <%= link_to '新規登録', new_worker_registration_path, class: "sign-up" %>
+          <div id='Head_btn'>
+          <ul>
+              <li><%= link_to 'ログイン', worker_session_path, class: "Headlink_btn" %></li>
+              <li><%= link_to '新規登録', new_worker_registration_path, class: "Headlink_btn" %></li>
+            </ul>
           </div>
         </div>
       </div>
