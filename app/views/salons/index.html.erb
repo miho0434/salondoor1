@@ -1,15 +1,43 @@
-<h1>Salons#index</h1>
-ネイルサロン一覧</br>
-●件のネイルサロンがあります</br>
+<div class="main">
+  <div class="main_inner">
+  <h1>Salons#index</h1>
+   
+    <div class="">
+    ネイルサロン一覧</br>
+    ●件のネイルサロンがあります
+    </div>
 
-<ul class='salon-lists'>
-<% @salons.each do |salon| %>
-<li class='list'>
-<%= salon.store_name %><%= link_to '詳細', root_path, class: "#" %>
-</br><%= image_tag salon.image.variant(gravity: :center, resize:"250x250^", crop:"250x250+0+0").processed , class: "salon-img" if salon.image.attached?%>
-</br><%= salon.prefecture.name%><%= salon.city %>(<%= salon.station %>)
-</br><%= link_to '口コミを見る', salon_comments_path(salon.id), class: "#" %>
-</br><%= link_to '口コミを投稿する',  new_salon_comment_path(salon.id), class: "#" %>
-</li>
-<% end %>
-</ul>
+    <% @salons.each do |salon| %>
+    <ul class="salon_lists_wrap">
+      <li class="salon_list">
+        <div class="salon_list_head">
+          <div class="salon_name">
+            <%= link_to salon.store_name, salon_comments_path(salon.id) %>
+            <div class="salon_detail">
+            <%= link_to '詳細', root_path, class: "detail_btn" %></div>
+          </div>
+        </div>
+
+        <div class="salon_list_body">
+          <div class="salon_list_image">
+            <%= image_tag salon.image.variant(gravity: :center, resize:"250x250^", crop:"250x250+0+0").processed , class: "salon-img" if salon.image.attached?%>
+          </div>
+          <div class="salon_list_contents">
+            <div class="salon_list_info">
+              アクセス：<%= salon.prefecture.name%><%= salon.city %>(<%= salon.station %>)
+            </div>
+            <div id="salon_list_comments">
+              <ul>
+               <li><%= link_to '口コミを見る', salon_comments_path(salon.id), class: "comment_link_btn" %></li>
+            <li><%= link_to '口コミを投稿する',  new_salon_comment_path(salon.id), class: "comment_link_btn" %></li>
+            </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <% end %>
+
+
+  </div>
+</div>
