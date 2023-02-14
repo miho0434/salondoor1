@@ -14,13 +14,17 @@
           <div class="salon_name">
             <%= link_to salon.store_name, salon_comments_path(salon.id) %>
             <div class="salon_detail">
-            <%= link_to '詳細', root_path, class: "detail_btn" %></div>
+            <%= link_to 'サロン詳細', root_path, class: "detail_btn" %></div>
           </div>
         </div>
 
         <div class="salon_list_body">
           <div class="salon_list_image">
-            <%= image_tag salon.image.variant(gravity: :center, resize:"250x250^", crop:"250x250+0+0").processed , class: "salon-img" if salon.image.attached?%>
+           <% if salon.image.present?%>
+            <%= image_tag salon.image.variant(gravity: :center, resize:"400x225^", crop:"400x225+0+0").processed , class: "salon-img" if salon.image.attached?%>
+            <% else %>
+           <%= image_tag "sample.JPG" %>
+           <% end %>
           </div>
           <div class="salon_list_contents">
             <div class="salon_list_info">
