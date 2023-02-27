@@ -408,7 +408,6 @@ ol,ul{
 .salon_list_head{
   font-size: large;
   font-weight: bolder;
-  
 }
 
 .salon_name{
@@ -465,4 +464,58 @@ ol,ul{
   color: #67c5ff;
   border: double 4px #67c5ff;
   border-radius: 3px;
+}
+
+/*コメント一覧（comment/index）*/
+.comment_wrap{
+  border: 1px solid #CCCCCC;
+  word-wrap: break-word;
+  color: #656565;
+}
+
+.detail_header{
+  padding: 1em 1em;
+  background-color: #F5F3F1;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.detail_title{
+  color: #333333;
+  font-size: 18px;
+  font-weight: bold;
+  margin: auto 1em;
+}
+
+.comment_list{
+  margin-bottom: 1em;
+}
+
+.comment_item{
+  color: #333333;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0.2em 1em;
+}
+
+.commennt_list{
+  border: 1px solid #CCCCCC;
+  word-wrap: break-word;
+  color: #656565;
+  margin:10px 20px 0
+}
+
+.comment_list_head{
+}
+
+.comment_detail{
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 1em 1em
+}
+
+.comment_post_date{
+  font-size: small;
+  margin-top: 10px;
 }

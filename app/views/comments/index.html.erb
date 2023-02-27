@@ -1,30 +1,115 @@
-Comments/index</br>
-<%= @salon.store_name %>の口コミ一覧</br>
+<div class="main">
+<div class="main_inner">
+  <div class="comment_wrap">
 
+    <div class="detail_header">
+      <div class="salon_list_image">
+        <% if @salon.image.present?%>
+          <%= image_tag @salon.image.variant(gravity: :center, resize:"160x90^", crop:"160x90+0+0").processed , class: "salon-img" if @salon.image.attached?%>
+          <% else %>
+          <%= image_tag "sample2.JPG" %>
+        <% end %>
+      </div>
+      <div class="detail_title">
+        <%= @salon.store_name %>の口コミ一覧
+      </div>
+    </div>
+ 
+    <div class="comment_list">
+      <div class="comment_item">
+        雰囲気・環境・働きやすさ
+      </div>
+      <% @comments.each do |comment| %>
+        <ul class="commennt_lists_wrap">
+          <li class="commennt_list">
+            <div class="comment_list_head">
+              <div class="comment_detail">
+                <%= comment.atmosphere %>
+                <div class="comment_post_date">
+                  [投稿日：<%= comment.created_at.strftime('%Y/%m/%d') %>]
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+     <% end %>
+    </div>
 
-★雰囲気・環境・働きやすさ</br>
-<% @comments.each do |comment| %>
-<%= comment.atmosphere %></br>
-<% end %>
+    <div class="comment_list">
+      <div class="comment_item">
+        得られた技術、成長できるポイント
+      </div>
+      <% @comments.each do |comment| %>
+        <ul class="commennt_lists_wrap">
+          <li class="commennt_list">
+            <div class="comment_list_head">
+              <div class="comment_detail">
+                <%= comment.growth_potential%><div class="comment_post_date">
+                  [投稿日：<%= comment.created_at.strftime('%Y/%m/%d') %>]
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+     <% end %>
+    </div>
 
-★得られた技術、成長できるポイント</br>
-<% @comments.each do |comment| %>
-<%= comment.growth_potential  %></br>
-<% end %>
+    <div class="comment_list">
+      <div class="comment_item">
+        入社前後のギャップ
+      </div>
+      <% @comments.each do |comment| %>
+        <ul class="commennt_lists_wrap">
+          <li class="commennt_list">
+            <div class="comment_list_head">
+              <div class="comment_detail">
+                <%= comment.gap%>
+                <div class="comment_post_date">
+                  [投稿日：<%= comment.created_at.strftime('%Y/%m/%d') %>]
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+     <% end %>
+    </div>
 
-★入社前後のギャップ</br>
-<% @comments.each do |comment| %>
-<%= comment.gap %></br>
-<% end %>
+    <div class="comment_list">
+      <div class="comment_item">
+        福利厚生・給与など待遇面
+      </div>
+      <% @comments.each do |comment| %>
+        <ul class="commennt_lists_wrap">
+          <li class="commennt_list">
+            <div class="comment_list_head">
+              <div class="comment_detail">
+                <%= comment.treatment%>
+                <div class="comment_post_date">
+                  [投稿日：<%= comment.created_at.strftime('%Y/%m/%d') %>]
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+     <% end %>
+    </div>
 
-★福利厚生・給与など待遇面</br>
-<% @comments.each do |comment| %>
-<%= comment.treatment %></br>
-<% end %>
-
-★退職した、もしくは退職しようと考えている理由</br>
-<% @comments.each do |comment| %>
-<%= comment.reason_for_retirement %></br>
-<% end %>
-
-
+    <div class="comment_list">
+      <div class="comment_item">
+        退職した、もしくは退職しようと考えている理由
+      </div>
+      <% @comments.each do |comment| %>
+        <ul class="commennt_lists_wrap">
+          <li class="commennt_list">
+            <div class="comment_list_head">
+              <div class="comment_detail">
+                <%= comment.reason_for_retirement%>
+                <div class="comment_post_date">
+                  [投稿日：<%= comment.created_at.strftime('%Y/%m/%d') %>]
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+     <% end %>
+    </div>
